@@ -13,5 +13,9 @@ menu "Ubuntu Supplied Third-Party Device Drivers"
 ##
 ##
 ##
+source "ubuntu/aufs/Kconfig"
+##
+##
+##
 
 endmenu
