@@ -1616,7 +1616,6 @@ CONFIG_KSM					y
 CONFIG_TRANSPARENT_HUGEPAGE			y
 CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS		y
 
-CONFIG_CC_STACKPROTECTOR			y mark<Security>
 
 # Menu: Kernel hacking
 CONFIG_MAGIC_SYSRQ				y
@@ -1949,7 +1948,7 @@ CONFIG_SMP					y
 # Menu: Processor type and features
 
 # Menu: Processor type and features (x86)
-CONFIG_CC_STACKPROTECTOR			y mark<Security>
+CONFIG_CC_STACKPROTECTOR			p policy<(arch amd64 i386 armhf &/ value y) | value n>
 CONFIG_KEXEC					y
 CONFIG_CRASH_DUMP				y
 CONFIG_RELOCATABLE				y
