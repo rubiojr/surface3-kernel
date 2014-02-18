@@ -295,7 +295,7 @@ endif
 		$(pkgdir)/lib/modules/$(abi_release)-$*
 	rmdir $(pkgdir)/lib/modules/$(abi_release)-$*/_
 
-ifeq ($(do_tools),true)
+ifeq ($(do_linux_tools),true)
 	# Create the linux-tools tool links
 	install -d $(toolspkgdir)/usr/lib/linux-tools/$(abi_release)-$*
 ifeq ($(do_tools_cpupower),true)
@@ -309,11 +309,13 @@ ifeq ($(do_tools_x86),true)
 	ln -s ../$(src_pkg_name)-tools-$(abi_release)/turbostat $(toolspkgdir)/usr/lib/linux-tools/$(abi_release)-$*
 endif
 endif
+ifeq ($(do_cloud_tools),true)
 ifeq ($(do_tools_hyperv),true)
 	# Create the linux-hyperv tool links
 	install -d $(cloudpkgdir)/usr/lib/linux-tools/$(abi_release)-$*
 	ln -s ../$(src_pkg_name)-tools-$(abi_release)/hv_kvp_daemon $(cloudpkgdir)/usr/lib/linux-tools/$(abi_release)-$*
 	ln -s ../$(src_pkg_name)-tools-$(abi_release)/hv_vss_daemon $(cloudpkgdir)/usr/lib/linux-tools/$(abi_release)-$*
+endif
 endif
 
 headers_tmp := $(CURDIR)/debian/tmp-headers
@@ -462,7 +464,7 @@ ifneq ($(skipdbg),true)
 	# into the debug system.
 endif
 
-ifeq ($(do_tools),true)
+ifeq ($(do_linux_tools),true)
 	dh_installchangelogs -p$(pkgtools)
 	dh_installdocs -p$(pkgtools)
 	dh_compress -p$(pkgtools)
@@ -499,7 +501,7 @@ builddirpa = $(builddir)/tools-perarch
 
 $(stampdir)/stamp-prepare-perarch:
 	@echo Debug: $@
-ifeq ($(do_tools_infra),true)
+ifeq ($(do_any_tools),true)
 	rm -rf $(builddirpa)
 	install -d $(builddirpa)
 	for i in *; do ln -s $(CURDIR)/$$i $(builddirpa); done
@@ -510,7 +512,7 @@ endif
 
 $(stampdir)/stamp-build-perarch: $(stampdir)/stamp-prepare-perarch
 	@echo Debug: $@
-ifeq ($(do_tools),true)
+ifeq ($(do_linux_tools),true)
 ifeq ($(do_tools_cpupower),true)
 	# Allow for multiple installed versions of cpupower and libcpupower.so:
 	# Override LIB_MIN in order to to generate a versioned .so named
@@ -528,8 +530,10 @@ ifeq ($(do_tools_x86),true)
 	cd $(builddirpa)/tools/power/x86/turbostat && make CROSS_COMPILE=$(CROSS_COMPILE)
 endif
 endif
+ifeq ($(do_cloud_tools),true)
 ifeq ($(do_tools_hyperv),true)
 	cd $(builddirpa)/tools/hv && make CROSS_COMPILE=$(CROSS_COMPILE)
+endif
 endif
 	@touch $@
 
@@ -538,7 +542,7 @@ install-perarch: cloudpkgdir = $(CURDIR)/debian/$(cloud_pkg_name)
 install-perarch: $(stampdir)/stamp-build-perarch
 	@echo Debug: $@
 	# Add the tools.
-ifeq ($(do_tools),true)
+ifeq ($(do_linux_tools),true)
 	install -d $(toolspkgdir)/usr/lib
 	install -d $(toolspkgdir)/usr/lib/$(src_pkg_name)-tools-$(abi_release)
 
@@ -560,6 +564,7 @@ ifeq ($(do_tools_x86),true)
 		$(toolspkgdir)/usr/lib/$(src_pkg_name)-tools-$(abi_release)
 endif
 endif
+ifeq ($(do_cloud_tools),true)
 ifeq ($(do_tools_hyperv),true)
 	install -d $(cloudpkgdir)/usr/lib
 	install -d $(cloudpkgdir)/usr/lib/$(src_pkg_name)-tools-$(abi_release)
@@ -568,12 +573,13 @@ ifeq ($(do_tools_hyperv),true)
 	install -m755 $(builddirpa)/tools/hv/hv_vss_daemon \
 		$(cloudpkgdir)/usr/lib/$(src_pkg_name)-tools-$(abi_release)
 endif
+endif
 
 binary-perarch: toolspkg = $(tools_pkg_name)
 binary-perarch: cloudpkg = $(cloud_pkg_name)
 binary-perarch: install-perarch
 	@echo Debug: $@
-ifeq ($(do_tools),true)
+ifeq ($(do_linux_tools),true)
 	dh_strip -p$(toolspkg)
 	dh_installchangelogs -p$(toolspkg)
 	dh_installdocs -p$(toolspkg)
