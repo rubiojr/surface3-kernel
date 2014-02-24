@@ -8,10 +8,13 @@ linux (3.14.0-0.1) UNRELEASED; urgency=low
 
   * rebase to v3.14-rc3
     - LP: #1260303
-    - LP: #1260303
     - LP: #1268468
     - LP: #1248116
     - LP: #1211920
+  * rebase to v3.14-rc4
+    - LP: #1259790
+    - LP: #1259437
+    - LP: #1259435
 
  -- Tim Gardner <tim.gardner@canonical.com>  Fri, 07 Feb 2014 09:35:13 -0700
 
