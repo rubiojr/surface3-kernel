@@ -11,4 +11,6 @@ loader		= yaboot
 vdso		= vdso_install
 do_extras_package = true
 
+do_tools_cpupower = true
+
 #do_flavour_image_package = false
