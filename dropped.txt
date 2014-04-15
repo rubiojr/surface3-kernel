@@ -1,45 +1,14 @@
-This is the list of patches/features which have been temporarily
-reverted or disabled for T+1:
-
-UBUNTU: SAUCE: (no-up) add tracing for user initiated readahead requests
-UBUNTU: SAUCE: (no-up) ipv6: make the net.ipv6.conf.all.use_tempaddr sysctl propagate to interface settings
-UBUNTU: SAUCE: (no-up) Add 'used' to the video_cards structure attributes
-UBUNTU: SAUCE: (no-up) ipv6: Fix net.ipv6.conf.all.use_tempaddr sysctl
-UBUNTU: SAUCE: Bluetooth: Support for loading broadcom patchram firmware
-UBUNTU: SAUCE: Bluetooth: Add support for 13d3:3388 and 13d3:3389
-UBUNTU: SAUCE: Bluetooth: Add support for 04ca:2007
-UBUNTU: SAUCE: Bluetooth: Add support for 105b:e065
-UBUNTU: SAUCE: Bluetooth: Add support for Broadcom 413c:8143
-UBUNTU: SAUCE: arm64: export __copy_in_user to modules
-UBUNTU: SAUCE: SELinux: security_load_policy: Silence frame-larger-than warning
-UBUNTU: SAUCE: ARM: OMAP4460: cpuidle: Extend PM_OMAP4_ROM_SMP_BOOT_ERRATUM_GICD on cpuidle
-UBUNTU: SAUCE: ubuntu: overlayfs v20 -- vfs: add i_op->dentry_open()
-UBUNTU: SAUCE: ubuntu: overlayfs v20 -- overlay filesystem
-UBUNTU: SAUCE: ubuntu: overlayfs v20 -- overlayfs: add statfs support
-UBUNTU: SAUCE: ubuntu: overlayfs v20 -- overlayfs: implement show_options
-UBUNTU: SAUCE: ubuntu: overlayfs v20 -- fs: limit filesystem stacking depth
-UBUNTU: SAUCE: ubuntu: overlayfs -- follow vfs delegation breaking changes
-Revert "UBUNTU: SAUCE: arm64: export __copy_in_user to modules"
-UBUNTU: SAUCE: KVM: PPC: Book3S HV: Add little-endian guest support
-UBUNTU: SAUCE: KVM: PPC: Book3S: add helper routine to load guest instructions
-UBUNTU: SAUCE: KVM: PPC: Book3S: add helper routines to detect endian order
-UBUNTU: SAUCE: KVM: PPC: Book3S: MMIO emulation support for little endian guests
-SAUCE: crypto: omap-aes: add error check for pm_runtime_get_sync
-UBUNTU: SAUCE: intel_pstate: Add setting voltage value for baytrail P states.
-UBUNTU: SAUCE: Revert "EISA: Log device resources in dmesg"
-UBUNTU: SAUCE: Revert "EISA: Initialize device before its resources"
-mmc: sdhci-pci: break out definitions to header file
-mmc: sdhci-pci: add support of O2Micro/BayHubTech SD hosts
-UBUNTU: SAUCE: of_mdio: Add of_phy_attach function
-UBUNTU: SAUCE: net/phy: abort genphy_read_status when link changes during speed and duplex reading
-powerpc/book3e: rename interrupt_end_book3e with __end_interrupts
-UBUNTU: SAUCE: phylib: Add generic 10G driver
-UBUNTU: SAUCE: phylib: Support attaching to gen10g_driver
-UBUNTU: SAUCE: phylib: Add Clause 45 read/write functions
-UBUNTU: SAUCE: Use resource_size_t instead of long for PCI resource address
-UBUNTU: SAUCE: net/phy: Export function for use by dpaa_eth
-i2c: piix4: Use different message for AMD Auxiliary SMBus Controller
-mm: ignore VM_SOFTDIRTY on VMA merging
-drm/radeon: disable dpm on BTC
-kexec: add sysctl to disable kexec_load
+UBUNTU: SAUCE: (no-up) Sony laptop: Some Sony Vaia laptops do not enable wwan power by default.
+UBUNTU: SAUCE: (no-up) vfs: Add a trace point in the mark_inode_dirty function
+UBUNTU: SAUCE: (no-up) tools/hv: add basic Makefile
+UBUNTU: SAUCE: hv: Add vss daemon to Makefile
+UBUNTU: SAUCE: powerpc/powernv: Add calls to support little endian
+UBUNTU: ubuntu: aufs3 -- (no-up) aufs3-mmap.patch
+UBUNTU: SAUCE: fsl_qbman: Add drivers for Freescale DPAA Qman & Bman
+UBUNTU: SAUCE: fsl_pme2: Add support for DPAA PME
+UBUNTU: SAUCE: fmd: FMD14 integration
+UBUNTU: SAUCE: net: Add support for handling queueing in hardware
+UBUNTU: SAUCE: net/flow: remove sleeping and deferral mechanism from flow_cache_flush
+UBUNTU: SAUCE: dpaa_eth: Ethernet driver for Freescale QorIQ DPA Architecture
+UBUNTU: SAUCE: fix fmd headers
 
