@@ -6,23 +6,15 @@ linux (3.14.0-0.1) utopic; urgency=low
 
   [ Upstream Kernel Changes ]
 
+  * rebase to v3.15-rc3
   * rebase to v3.15-rc2
     - LP: #1297581
-
-  [ Upstream Kernel Changes ]
-
   * rebase to 88764e0a3ecf655950c4d46b323cf80e2e0ee481
-
-  [ Upstream Kernel Changes ]
-
   * rebase to v3.15-rc1
     - LP: #1305133
     - LP: #1297581
     - LP: #1297581
     - LP: #871808
-
-  [ Upstream Kernel Changes ]
-
   * rebase to v3.14-rc3
     - LP: #1260303
     - LP: #1268468
