@@ -1106,7 +1106,7 @@ static int apparmor_task_kill(struct task_struct *target, struct siginfo *info,
 		 *  Dealing with USB IO specific behavior
 		 */
 		return 0;
-	cl = __aa_current_label();
+	cl = __aa_get_current_label();
 	tl = aa_get_task_label(target);
 	error = aa_may_signal(cl, tl, sig);
 	aa_put_label(tl);
