@@ -610,8 +610,9 @@ out:
 }
 
 static int profile_pivotroot(struct aa_profile *profile, const char *new_name,
-			     const char *old_name, struct aa_profile *target)
+			     const char *old_name)
 {
+	struct aa_profile *target = NULL;
 	struct file_perms perms = { };
 	const char *info = NULL;
 	int error = -EACCES;
@@ -634,23 +635,25 @@ static int profile_pivotroot(struct aa_profile *profile, const char *new_name,
 				if (!target)
 					error = -ENOENT;
 				else
-					error = aa_replace_current_label(&target->label);
+				  error = aa_replace_current_label(&target->label);
 			} else
 				error = 0;
 		}
 	}
 
-	return audit_mount(profile, OP_PIVOTROOT, new_name, old_name,
+	error = audit_mount(profile, OP_PIVOTROOT, new_name, old_name,
 			    NULL, target ? target->base.name : NULL,
 			    0, NULL, AA_MAY_PIVOTROOT, &perms, info,
 			    error);
+	aa_put_profile(target);
+
+	return error;
 }
 
 int aa_pivotroot(struct aa_label *label, struct path *old_path,
 		  struct path *new_path)
 {
 	struct aa_profile *profile;
-	struct aa_profile *target = NULL;
 	char *old_buffer = NULL, *new_buffer = NULL;
 	const char *old_name, *new_name = NULL, *info = NULL;
 	int error;
@@ -669,9 +672,8 @@ int aa_pivotroot(struct aa_label *label, struct path *old_path,
 		goto error;
 
 	error = fn_for_each(label, profile,
-			profile_pivotroot(profile, new_name, old_name, target));
+			profile_pivotroot(profile, new_name, old_name));
 out:
-	aa_put_profile(target);
 	put_buffers(old_buffer, new_buffer);
 
 	return error;
@@ -679,7 +681,7 @@ out:
 error:
 	error = fn_for_each(label, profile,
 			audit_mount(profile, OP_PIVOTROOT, new_name, old_name,
-				    NULL, target ? target->base.name : NULL,
+				    NULL, NULL,
 				    0, NULL, AA_MAY_PIVOTROOT, &nullperms, info,
 				    error));
 	goto out;
