@@ -11,3 +11,4 @@ device-tree/tegra20-seaboard.dtb ?
 device-tree/tegra20-trimslice.dtb ?
 device-tree/tegra20-ventana.dtb ?
 device-tree/tegra20-whistler.dtb ?
+device-tree/apm-mustang.dtb ?
