@@ -1,1 +1,4 @@
-#!/bin/true
+#!/bin/sh
+set -e
+dpkg-buildpackage -us -uc -b
+
