@@ -280,7 +280,7 @@ static bool __aa_label_remove(struct aa_labelset *ls, struct aa_label *label)
 {
 	AA_BUG(!ls);
 	AA_BUG(!label);
-	AA_BUG(write_can_lock(&ls->lock));
+	AA_BUG(!write_is_locked(&ls->lock));
 	AA_BUG(labels_set(label) != ls);
 
 	if (label_invalid(label))
@@ -324,7 +324,7 @@ static bool __aa_label_replace(struct aa_labelset *ls, struct aa_label *old,
 	AA_BUG(!ls);
 	AA_BUG(!old);
 	AA_BUG(!new);
-	AA_BUG(write_can_lock(&ls->lock));
+	AA_BUG(!write_is_locked(&ls->lock));
 	AA_BUG(labels_set(old) != ls);
 	AA_BUG(new->flags & FLAG_IN_TREE);
 
@@ -353,7 +353,7 @@ static struct aa_label *__aa_label_remove_and_insert(struct aa_labelset *ls,
 	AA_BUG(!ls);
 	AA_BUG(!remove);
 	AA_BUG(!insert);
-	AA_BUG(write_can_lock(&ls->lock));
+	AA_BUG(!write_is_locked(&ls->lock));
 	AA_BUG(labels_set(remove) != ls);
 	AA_BUG(insert->flags & FLAG_IN_TREE);
 
@@ -559,7 +559,7 @@ static struct aa_label *__aa_label_insert(struct aa_labelset *ls,
 
 	AA_BUG(!ls);
 	AA_BUG(!l);
-	AA_BUG(write_can_lock(&ls->lock));
+	AA_BUG(!write_is_locked(&ls->lock));
 	AA_BUG(l->flags & FLAG_IN_TREE);
 
 	/* Figure out where to put new node */
