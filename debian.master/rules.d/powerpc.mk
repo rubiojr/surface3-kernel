@@ -19,6 +19,7 @@ build_image_powerpc64-emb	= uImage
 kernel_file_powerpc64-emb	= arch/powerpc/boot/uImage
 
 loader		= yaboot
+vdso		= vdso_install
 
 custom_flavours	=
 

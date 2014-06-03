@@ -9,6 +9,7 @@ install_file	= vmlinuz
 no_dumpfile = true
 
 loader		= grub
+vdso		= vdso_install
 
 dtb_files_generic += apm-mustang.dtb
 dtb_files_generic += foundation-v8.dtb
