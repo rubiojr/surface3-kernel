@@ -11,6 +11,9 @@ no_dumpfile = true
 loader		= grub
 vdso		= vdso_install
 
+do_tools_cpupower = true
+do_tools_perf   = true
+
 dtb_files_generic += apm-mustang.dtb
 dtb_files_generic += foundation-v8.dtb
 dtb_files_generic += rtsm_ve-aemv8a.dtb
