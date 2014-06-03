@@ -1579,7 +1579,7 @@ CONFIG_BLK_CGROUP y note<dependancy of boot essential>
 CONFIG_CGROUP_SCHED				y
 CONFIG_FAIR_GROUP_SCHED				y
 CONFIG_CFS_BANDWIDTH				y note<optional scheduling control -- opt-in>
-CONFIG_RT_GROUP_SCHED				y
+CONFIG_RT_GROUP_SCHED				n note<http://bugs.launchpad.net/bugs/1284731>
 
 # Menu: General setup >> GCOV-based kernel profiling
 CONFIG_GCOV_KERNEL				n
