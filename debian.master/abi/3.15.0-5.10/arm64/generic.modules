@@ -1352,7 +1352,6 @@ pfuze100-regulator
 phonet
 phy-bcm-kona-usb2
 phy-exynos-usb2
-phy-xgene
 pixcir_i2c_ts
 pktcdvd
 pktgen
