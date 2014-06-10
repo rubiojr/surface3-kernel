@@ -832,7 +832,7 @@ CONFIG_SRAM					y
 
 # Menu: Device Drivers >> Multifunction device drivers
 set +tree 'Device Drivers>>Multifunction device drivers' ?pattern ^MFD_ ?type bool !flag EXPERIMENTAL = y
-CONFIG_EZX_PCAP					p policy<(arch armhf &/ value n) | value m> flag<BUILD FAILURE>
+CONFIG_EZX_PCAP					n
 CONFIG_MFD_SM501 p policy<(arch armel armhf &/ value y) | value m> note<boot essential on OMAP4>
 CONFIG_MFD_OMAP_USB_HOST			y
 
