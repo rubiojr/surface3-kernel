@@ -28,3 +28,6 @@
 &serial0 {
 	status = "ok";
 };
+&menet {
+	status = "ok";
+};
