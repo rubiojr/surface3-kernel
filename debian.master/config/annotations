@@ -770,7 +770,7 @@ CONFIG_LEDS_TRIGGER_CPU				y
 
 # Menu: Device Drivers >> MMC/SD/SDIO card support
 CONFIG_MMC					y
-CONFIG_MMC_BLOCK				p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
+CONFIG_MMC_BLOCK				p policy<(arch arm64 armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_MMC_TEST					n flag<TESTING>
 CONFIG_MMC_SDHCI				p policy<(arch armel armhf highbank &/ value y) | value m> note<installation essential on omap/highbank>
 CONFIG_MMC_SDHCI_PLTFM				p policy<(arch armel armhf &/ value y) | value m> note<boot essential on highbank>
