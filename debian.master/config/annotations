@@ -1304,7 +1304,7 @@ CONFIG_USB_M66592 n note<gadget device>
 CONFIG_USB_DUMMY_HCD n flag<TESTING>
 
 # Menu: Device Drivers >> USB Physical Layer drivers
-CONFIG_NOP_USB_XCEIV p policy<(arch armel armhf &/ value y) | value m> note<boot essential on omap/highbank>
+CONFIG_NOP_USB_XCEIV				m
 
 # Menu: Device Drivers >> USB support
 CONFIG_USB_SUPPORT				y
