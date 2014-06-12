@@ -128,10 +128,11 @@ install-tools: install-source $(stampdir)/stamp-build-perarch
 	install -d $(cloudman)/man8
 	install -m644 $(CURDIR)/tools/hv/*.8 $(cloudman)/man8
 
+	dh_systemd_enable
 	dh_installinit -p$(cloudpkg) --name hv-kvp-daemon
 	dh_installinit -p$(cloudpkg) --name hv-vss-daemon
 	dh_installinit -p$(cloudpkg) --name hv-fcopy-daemon
-
+	dh_systemd_start
 
 
 install-indep: install-tools
