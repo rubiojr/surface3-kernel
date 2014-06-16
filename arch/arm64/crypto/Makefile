@@ -36,3 +36,4 @@ CFLAGS_aes-glue-ce.o	:= -DUSE_V8_CRYPTO_EXTENSIONS
 
 $(obj)/aes-glue-%.o: $(src)/aes-glue.c FORCE
 	$(call if_changed_dep,cc_o_c)
+	mv -v $(obj)/.tmp_aes-glue-$*.o $(obj)/aes-glue-$*.o
