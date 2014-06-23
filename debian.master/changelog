@@ -6,6 +6,10 @@ linux (3.16.0-0.1) UNRELEASED; urgency=low
 
   [ Upstream Kernel Changes ]
 
+  * rebase to v3.16-rc2
+
+  [ Upstream Kernel Changes ]
+
   * rebase to v3.16-rc1
     - LP: #1328587
     - LP: #1319291
