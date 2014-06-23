@@ -10,6 +10,6 @@ loader		= grub
 vdso		= vdso_install
 no_dumpfile	= true
 do_tools_cpupower = true
-do_tools_perf   = true
+#do_tools_perf   = true
 do_tools_x86	= true
 do_extras_package = true

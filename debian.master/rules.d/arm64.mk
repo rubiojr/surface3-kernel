@@ -12,7 +12,7 @@ loader		= grub
 vdso		= vdso_install
 
 do_tools_cpupower = true
-do_tools_perf   = true
+#do_tools_perf   = true
 
 dtb_files_generic += apm-mustang.dtb
 dtb_files_generic += foundation-v8.dtb
