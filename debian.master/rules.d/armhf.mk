@@ -11,7 +11,7 @@ no_dumpfile	= true
 loader		= grub
 
 do_tools_cpupower = true
-#do_tools_perf	= true
+do_tools_perf	= true
 
 # Flavour specific configuration.
 dtb_files_generic	+= highbank.dtb
