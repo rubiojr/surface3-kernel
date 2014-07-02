@@ -4,6 +4,7 @@ arch/x86/kvm/kvm-intel.ko
 arch/x86/kvm/kvm-amd.ko
 crypto/*
 drivers/acpi/*
+drivers/char/ipmi/ipmi_msghandler.ko
 drivers/ata/ahci_platform.ko
 drivers/ata/ahci.ko
 drivers/ata/acard-ahci.ko
