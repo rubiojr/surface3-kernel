@@ -38,6 +38,7 @@ drivers/input/touchscreen/usbtouchscreen.ko
 drivers/input/misc/xen-kbdfront.ko
 drivers/md/*
 drivers/message/fusion*
+drivers/scsi/scsi_transport_spi.ko
 drivers/misc/vmw_balloon.ko
 drivers/misc/vmw_vmci/vmw_vmci.ko
 drivers/net/caif/caif_virtio.ko
