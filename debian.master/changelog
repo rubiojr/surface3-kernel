@@ -1,3 +1,12 @@
+linux (3.16.0-2.7) utopic; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * ubuntu: aufs3 -- avoid aufs3-mmap.patch include hell for arm64
+    ubuntu: aufs3 -- (no-up) aufs3-mmap.patch
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 09 Jul 2014 16:16:28 +0100
+
 linux (3.16.0-2.6) utopic; urgency=low
 
   [ Andy Whitcroft ]
