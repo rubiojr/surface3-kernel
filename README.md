@@ -17,7 +17,7 @@ Patch from: http://ubuntuforums.org/showthread.php?t=2231207&page=2&p=13070900#p
 ## Building
 
 ```
-sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev
+sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev bc
 
 make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-surface3
 ```
