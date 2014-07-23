@@ -943,4 +943,6 @@
 #define USB_VENDOR_ID_SIS	0x0457
 #define USB_DEVICE_ID_SIS_TS	0x1013
 
+#define USB_DEVICE_ID_MS_TYPE_COVER_3    0x07dc
+
 #endif
