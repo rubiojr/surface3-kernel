@@ -23,3 +23,7 @@ make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-surface3
 ```
 
 See https://wiki.ubuntu.com/KernelTeam/GitKernelBuild
+
+## Reading
+
+https://bugzilla.kernel.org/show_bug.cgi?id=64811
