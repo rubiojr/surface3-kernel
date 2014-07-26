@@ -28,6 +28,17 @@ See https://wiki.ubuntu.com/KernelTeam/GitKernelBuild
 
 Copy the `misc/xorg.conf` configuration to `/etc/X11/xorg.conf` and restart the session.
 
+## Bluetooth/WiFi
+
+Updating the firmware from the Marvell git repository fixes WiFi quirks and the bluetooth device is recognized (btusb), though not fully functional apparently.
+
+```
+git clone git://git.marvell.com/mwifiex-firmware.git
+sudo cp mwifiex-firmware/mrvl/* /lib/firmware/mrvl/
+```
+
+and reboot.
+
 ## Reading
 
 https://github.com/rubiojr/surface3-ubuntu-trusty
